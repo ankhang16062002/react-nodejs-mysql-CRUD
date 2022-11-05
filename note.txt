@@ -1,0 +1,22 @@
+- Step 1: Tải last version mysql: https://dev.mysql.com/
+- Step 2: Download Mysql workbench, có thể design table, tạo
+mới items, xem bảng.
+
+- Tạo my own schema, sau đó apply
+- Từ thư mục tables trong schema vừa tạo, tạo 1 bảng mới:
+   + VD: books
+   + Thêm các field các trường
+   + select box: 
+       PK(primary key) 
+       AI(automatic increment): tức là khi tạo ko cần chỉ định filed, nó tự động tăng số lượng
+       NN(Not NULL): tức là bắt buộc phải có giá trị
+
+- khi select bằng workbench tools và tạo, nó sẽ tạo ra code sql để tạo bảng,
+nếu muốn tạo tay vào cmd gõ code my sql để tạo.
+VD:
+   CREATE TABLE `test_data`.`books` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `desc` VARCHAR(200) NOT NULL,
+  `cover` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
