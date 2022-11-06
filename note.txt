@@ -20,3 +20,37 @@ VD:
   `desc` VARCHAR(200) NOT NULL,
   `cover` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
+
+- Tạo dữ liệu bằng tool trên mysql workbench: sửa luôn vào
+bảng truy vấn, sau đó ấn apply
+
+- step 3: Go to Project: tạo 2 folder backend và client
+
+- backend: npm init -y: khởi tạo file package.json
+dependence package: express, nodemon, mysql
+
++ để dùng es6 trong nodejs, trong file package.json, thêm option là 
+type = "module" là oke
+
++ connect to mysql db:
+const db = mysql.createConnection({
+   host: "localhost",
+   user: "root",
+   password: "12345",
+   database: "test_data"
+})
+
++ nếu trong mysql không có password thì sẽ để password bằng
+rỗng
+
++ Cách lấy dữ liệu từ database của mysql trong express:
+  . tạo 1 query sql
+  . dùng instance db được tạo, gọi phương thức query, tham số 1 là 
+  câu lệnh truy vấn query, tham số thứ hai là callback gồm 2 tham số
+  là error và data trả về 
+
++ send data từ người dùng: mặc định express server không nhận data từ user,
+=> sử dụng middleware trước, app.use(express.json()), nó cho phép user gửi bất kì json file to client
+
++ khi 1 bảng có sẵn được tạo, muốn thêm 1 field vào bảng đó ta click
+chuột phải vào bảng, chọn ALTER TABLE
